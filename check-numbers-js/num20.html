@@ -25,6 +25,20 @@
             let secondNum = parseFloat(document.getElementById('secondNumber').value);
             let target = document.getElementById('target');
 
+            function isNegative(num) {
+                return num < 0;
+            }
+
+
+            if (isNegative(firstNum) && isNegative(secondNum)) {
+                target.innerHTML = "Both numbers are negative";
+            } else if (isNegative(firstNum) && !isNegative(secondNum)) {
+                target.innerHTML = "First number is negative";
+            } else if (!isNegative(firstNum) && isNegative(secondNum)) {
+                target.innerHTML = "Second number is negative";
+            } else {
+                target.innerHTML = "Both numbers is positive";
+            }
 
         }
     </script>
