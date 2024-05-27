@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19. Check whether a given integer is within 20 of 100 or 400</title>
+</head>
+
+<body>
+
+    <label for="inputNumber">Enter a number: </label>
+    <input type="number" name="input-number" id="inputNumber" /><br><br>
+    <button type="button" onclick="check()">Check</button><br><br>
+
+    <span id="target"></span>
+
+    <script>
+        function check() {
+            let inputNumber = parseFloat(document.getElementById('inputNumber').value);
+            let target = document.getElementById('target');
+
+            if (inputNumber < 100 && (100 - inputNumber) <= 20) {
+
+                target.innerHTML = "given integer is within 20 of 100";
+
+            } else if (inputNumber > 100 && inputNumber < 400 && (400 - inputNumber) <= 20) {
+
+                target.innerHTML = "given integer is within 20 of 400";
+
+            } else if (inputNumber === 100) {
+
+                target.innerHTML = "given integer is equals to 100";
+
+            } else if (inputNumber === 400) {
+
+                target.innerHTML = "given integer is equals to 400";
+
+            } else {
+
+                target.innerHTML = "given integer is not within 20 of 100 or 400";
+
+            }
+        }
+    </script>
+</body>
+
+</html>
